@@ -3,6 +3,7 @@
 
 {% block content %}
 
-<h1>This is the puppy page for: {{name}}</h1>
+<h1>This is the puppy page for: {{name|capitalize}}</h1>
+<a href="{{url_for('static', filename='puppy.jpg')}}">Click me</a>
 
 {% endblock %}
