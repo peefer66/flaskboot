@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1>Lets see how you performed...</h1>
+    <p></p>
+    
+    {% if errors %} 
+    <h2>Your username contaned the following errors</h2>
+        <ul>
+            {% for error in errors %}
+            <li>{{error}}</li>
+            {% endfor %}
+        </ul>
+        <h2>Please try again</h2>
+    {% else %}
+        <h2>Your username passed, well done</h2>
+    {% endif %}
+</div>
+{% endblock %}

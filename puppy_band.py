@@ -8,8 +8,8 @@ def page_not_found(e):
 
 @app.route('/')
 def index():
-    
     return render_template('index.html')
+    
 @app.route('/signup_form')
 def signup_form():
     return render_template('sign_up_puppy_band.html')
