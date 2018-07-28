@@ -13,19 +13,19 @@ def index():
 
 @app.route('/report')
 def report():
-    name = request.args.get('username')
+    username = request.args.get('username')
     errors = []
     # Logic to determine if username contains a Capital letter, a lowercase letter and a number
-    if not any(letter.isupper() for letter in name):
+    if not any(letter.isupper() for letter in username):
         errors.append('Your username needs at least 1 capital letter.')
     
-    if not any(letter.islower() for letter in name):
+    if not any(letter.islower() for letter in username):
         errors.append('Your username needs at least 1 lower case letter')
     
-    if not any(letter.isnumeric() for letter in name):
+    if not any(letter.isnumeric() for letter in username):
         errors.append('Your username needs at least 1 number.')
 
-    return render_template('report.html', name=name, errors=errors)
+    return render_template('report.html', username=username, errors=errors)
 
 if __name__ == '__main__':
     app.run(debug=True)
